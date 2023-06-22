@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>優雅な紅茶のひと時を</title>
+</head>
+<body>
+  <h1>文字列の暗号化・復号化</h1>
+<label for="input">暗号化したい文字列:</label>
+<input type="text" id="input" />
+
+<label for="key">合言葉:</label>
+<input type="text" id="key" />
+
+<button onclick="&#x65;&#x6e;&#x63;&#x72;&#x79;&#x70;&#x74;()">暗号化</button>
+<button onclick="&#x64;&#x65;&#x63;&#x72;&#x79;&#x70;&#x74;()">復号化</button>
+
+  <h2>暗号化・復号化された文字列:</h2>
+  <p id="result"></p>
+  <script>
+    function &#x65;&#x6e;&#x63;&#x72;&#x79;&#x70;&#x74;() {
+      var &#x69;&#x6e;&#x70;&#x75;&#x74; = document.getElementById("input").value;
+      var &#x6b;&#x65;&#x79; = document.getElementById("key").value;
+
+      var &#x65;&#x6e;&#x63;&#x72;&#x79;&#x70;&#x74;&#x65;&#x64; = "";
+
+      for (var i = 0; i &lt; &#x69;&#x6e;&#x70;&#x75;&#x74;.length; i++) {
+        var &#x63;&#x68;&#x61;&#x72;&#x43;&#x6f;&#x64;&#x65; = &#x69;&#x6e;&#x70;&#x75;&#x74;.charCodeAt(i);
+        var &#x6b;&#x65;&#x79;&#x49;&#x6e;&#x64;&#x65;&#x78; = i % &#x6b;&#x65;&#x79;.length;
+        var &#x6b;&#x65;&#x79;&#x43;&#x68;&#x61;&#x72; = &#x6b;&#x65;&#x79;.charCodeAt(&#x6b;&#x65;&#x79;&#x49;&#x6e;&#x64;&#x65;&#x78;);
+
+        var &#x65;&#x6e;&#x63;&#x72;&#x79;&#x70;&#x74;&#x65;&#x64;&#x43;&#x68;&#x61;&#x72;&#x43;&#x6f;&#x64;&#x65; = &#x63;&#x68;&#x61;&#x72;&#x43;&#x6f;&#x64;&#x65; + &#x6b;&#x65;&#x79;&#x43;&#x68;&#x61;&#x72;;
+
+        &#x65;&#x6e;&#x63;&#x72;&#x79;&#x70;&#x74;&#x65;&#x64; += String.fromCharCode(&#x65;&#x6e;&#x63;&#x72;&#x79;&#x70;&#x74;&#x65;&#x64;&#x43;&#x68;&#x61;&#x72;&#x43;&#x6f;&#x64;&#x65;);
+      }
+
+      document.getElementById("result").textContent = &#x65;&#x6e;&#x63;&#x72;&#x79;&#x70;&#x74;&#x65;&#x64;;
+    }
+
+    function &#x64;&#x65;&#x63;&#x72;&#x79;&#x70;&#x74;() {
+      var &#x65;&#x6e;&#x63;&#x72;&#x79;&#x70;&#x74;&#x65;&#x64; = document.getElementById("result").textContent;
+      var &#x6b;&#x65;&#x79; = document.getElementById("key").value;
+
+      var &#x64;&#x65;&#x63;&#x72;&#x79;&#x70;&#x74;&#x65;&#x64; = "";
+
+      for (var i = 0; i &lt; &#x65;&#x6e;&#x63;&#x72;&#x79;&#x70;&#x74;&#x65;&#x64;.length; i++) {
+        var &#x63;&#x68;&#x61;&#x72;&#x43;&#x6f;&#x64;&#x65; = &#x65;&#x6e;&#x63;&#x72;&#x79;&#x70;&#x74;&#x65;&#x64;.charCodeAt(i);
+        var &#x6b;&#x65;&#x79;&#x49;&#x6e;&#x64;&#x65;&#x78; = i % &#x6b;&#x65;&#x79;.length;
+        var &#x6b;&#x65;&#x79;&#x43;&#x68;&#x61;&#x72; = &#x6b;&#x65;&#x79;.charCodeAt(&#x6b;&#x65;&#x79;&#x49;&#x6e;&#x64;&#x65;&#x78;);
+
+        var &#x64;&#x65;&#x63;&#x72;&#x79;&#x70;&#x74;&#x65;&#x64;&#x43;&#x68;&#x61;&#x72;&#x43;&#x6f;&#x64;&#x65; = &#x63;&#x68;&#x61;&#x72;&#x43;&#x6f;&#x64;&#x65; - &#x6b;&#x65;&#x79;&#x43;&#x68;&#x61;&#x72;;
+
+        &#x64;&#x65;&#x63;&#x72;&#x79;&#x70;&#x74;&#x65;&#x64; += String.fromCharCode(&#x64;&#x65;&#x63;&#x72;&#x79;&#x70;&#x74;&#x65;&#x64;&#x43;&#x68;&#x61;&#x72;&#x43;&#x6f;&#x64;&#x65;);
+      }
+
+      document.getElementById("result").textContent = &#x64;&#x65;&#x63;&#x72;&#x79;&#x70;&#x74;&#x65;&#x64;;
+    }
+  </script>
+</body>
+</html>
